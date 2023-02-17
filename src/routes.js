@@ -44,8 +44,9 @@ router.post('/:auctionId/edit', isAuthenticated, auctionController.postEditedAuc
 //Delete post
 router.get('/:auctionId/delete', isAuthenticated, auctionController.getDeleteAuction)
 
-// // //search
-// router.get('/search', isAuthenticated, auctionController.getSearchPage)
+ //close
+router.get('/:auctionId/close', isAuthenticated, auctionController.postClosed)
+router.get('/closedAuctions', isAuthenticated, auctionController.getClosedPage)
 // router.post('/search', isAuthenticated, auctionController.getSearchPagewithResults)
 
 

@@ -44,6 +44,13 @@ const auctionSchema = new mongoose.Schema({
         type: mongoose.Types.ObjectId,
         ref: 'User'
     }],
+    isOpened: {
+        type: Boolean,
+        default: true
+    },
+    winner : {
+        type: String,
+    }
     
     // createdAt: {
     //     type: Date, default: Date.now

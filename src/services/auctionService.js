@@ -1,7 +1,8 @@
 const Auction = require('../models/Auction')
 
 exports.getOne= (auctionId) => Auction.findById(auctionId)
-exports.getAll = () => Auction.find()
+exports.getAllActive = () => Auction.find({isOpened: true})
+exports.getAllUnactive = () => Auction.find({isOpened: false})
 exports.getLastAdded = () => Auction.find({}).sort({createdAt: -1})
 exports.update = (auctionId, data) => Auction.findByIdAndUpdate(auctionId, data, {runValidators: true})
 exports.delete = (auctionId) => Auction.findByIdAndDelete(auctionId, {runValidators: true})

@@ -10,7 +10,7 @@ exports.getHomePage = async (req, res) => {
 
 
 exports.getBrowsePage = async (req, res) => {
-        const allAuctions = await auctionService.getAll().lean()
+        const allAuctions = await auctionService.getAllActive().lean()
         res.render('browse', {allAuctions})
 }
 // exports.getProfilePage = async (req,res) => {

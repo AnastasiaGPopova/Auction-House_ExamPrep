@@ -6,8 +6,10 @@
                 <h1 class="item">
                     {{currentAuction.title}}
                     {{#if isOwner}}
-                        <a href="/{{currentAuction._id}}/edit" class="action">Edit</a>
-                        <a href="/{{currentAuction._id}}/delete" class="action">Delete</a>
+                    <div class="f-right">
+                        <a class="action pad-small f-left" href="/{{currentAuction._id}}/edit">Edit</a>
+                        <a class="action pad-small f-left" href="/{{currentAuction._id}}/delete">Delete</a>
+                    </div>
                     {{/if}}
                 </h1>
                 <div class="item padded">
@@ -38,6 +40,7 @@
                                     No bits
                                 </div>
                                     {{/if}}
+                                    <a class="action pad-med cta" href="/{{currentAuction._id}}/close">Close Auction</a>
                                 {{else}}
                                 <!-- If current user can place a bid -->
                                 {{#if isBidAlreadyLast}}
@@ -60,7 +63,7 @@
                         </div>
                     </div>
 
-                    <footer>Listed by Peter Jackson</footer>
+                    <footer>Listed by {{currentAuction.author.profile.firstName}} {{currentAuction.author.profile.lastName}}</footer>
                 </div>
 
             </section>
