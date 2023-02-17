@@ -1,0 +1,47 @@
+{{!-- 
+        <main>
+            <section id="deatils-page">
+                <div class="wrapper">
+                    <div class="product-img">
+                        <img src="{{currentHouse.imageUrl}}">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-text">
+                            <div class="product-text">
+                                <h1>Name: {{currentHouse.name}}</h1>
+                                <h2>Type: {{currentHouse.type}}</h2>
+                                <h4>Year: {{currentHouse.year}}</h4>
+                                <h4>City: {{currentHouse.city}}</h4>
+                                <p>Description: {{currentHouse.description}}</p>
+                                <!-- if there are already tenants of the housing, separate their names with a comma and a space ", "  -->
+                               {{#if isRented}}
+                                <p>People rented this housing: {{rentedBy}}</p>
+                                {{else}}
+                                <p>People rented this housing: There are no tenants yet.</p>
+                                {{/if}}
+                            </div>
+                        </div> 
+
+                        <!-- if there is no registered user, do not display buttons-->
+
+                         {{#if isLogged}}
+                         <div class="product-btn">
+                            {{#if isOwner}}
+                            <a href="/{{currentHouse._id}}/edit" class="edit">Edit</a>
+                            <a href="/{{currentHouse._id}}/delete" class="remove">Delete</a>
+                            {{else}}
+                            {{#if isRentedbyCurrentUser}}
+                            <p class="alRentHome">You have already rent this home</p>
+                            {{else}}
+                            {{#if isAvailable}}
+                            <a href="/{{currentHouse._id}}/rent" class="rentHome">Rent a home, available {{currentHouse.prices}} housing</a>
+                            {{else}}
+                            <p class="no-housing">No Housing Available!</p>
+                            {{/if}}
+                            {{/if}}
+                            {{/if}}
+                    </div>
+                    {{/if}}
+                </div>
+            </section>
+        </main> --}}

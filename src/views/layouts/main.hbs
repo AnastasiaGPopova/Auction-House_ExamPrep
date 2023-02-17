@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/site.css">
+    <title>Auction House</title>
+</head>
+
+<body>
+
+    <div id="page-content">
+
+        <header>
+            <a href="/" class="title-logo">
+                <img src="/static/assets/logo.png">
+                <span>Auction House</span>
+            </a>
+            <nav class="main-nav nav-mid">
+                <ul>
+                    <li>
+                        <a href="/browse">Browse</a>
+                    </li>
+                    <!-- User actions -->
+                    {{#if isAuthenticated}}
+                    <li class="user">
+                        <a href="/create">Publish</a>
+                    </li>
+
+                    <li class="user">
+                        <a href="/closedAuctions">Closed Auctions</a>
+                    </li>
+                
+                    <li class="user">
+                        <a href="/logout">Logout</a>
+                    </li>
+                    {{else}}
+                    <!-- Guest actions -->
+                    <li class="guest">
+                        <a href="/register">Register</a>
+                    </li>
+                    <li class="guest">
+                        <a href="/login">Login</a>
+                    </li>
+                    {{/if}}
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+
+            {{#if errors}}
+            <div class="error-box">
+                {{#each errors}}
+                <p>{{this}}</p>
+                {{/each}}
+            </div>
+            {{/if}}
+
+            
+            {{{body}}}
+
+        </main>
+
+        <footer>SoftUni &copy; 2022 | Design by Viktor Kostadinov</footer>
+    </div>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Do not forget to change the path to the css file -->
+    <title>Home Page</title>
+    <link href="/css/style.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="box">
+
+        <div>
+             {{#if errors}}
+            <div class="errorContainer">
+                {{#each errors}}
+                <p>{{this}}</p>
+                {{/each}}
+            </div>
+            {{/if}}
+        </div>
+
+        <nav>
+            <a href="/">Home</a>
+            <ul>
+                <!-- Guest users and Logged users -->
+                <li><a href="/calalog">Housing for rent</a></li>
+                <!-- Guest users -->
+                {{#if isAuthenticated}}
+                <li><a href="/create">Create offer</a></li>
+                <li><a href="/search">Search</a></li>
+                <li><a href="/logout">Logout</a></li>
+                {{else}}
+                <li><a href="/login">Login</a></li>
+                <li><a href="/register">Register</a></li>
+                {{/if}}
+            </ul>
+        </nav>
+
+        {{{body}}}
+
+
+        <footer>
+            © 2021
+        </footer>
+    </div>
+
+</body>
+
+</html>
+
+
+
+
+
+
+ --}}
